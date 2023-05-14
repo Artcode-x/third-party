@@ -31,19 +31,21 @@ function checkButtons_pageLevelofDiffucult() {
   })
   for (const levelsButtonElement of levelsButtonElements) {
     // 1 произвольное название (один элемент к которому обращаемся), 2 - название самой переменной (все эл-ты)
-    switch (levelsButtonElement.textContent) {
-      case "1":
-        globalState.difficult = "easy"
-        break
-      case "2":
-        globalState.difficult = "average"
-        break
-      case "3":
-        globalState.difficult = "hard"
-        break
-      default:
-        break
-    }
+    levelsButtonElement.addEventListener("click", () => {
+      switch (levelsButtonElement.textContent) {
+        case "1":
+          globalState.difficult = "easy"
+          break
+        case "2":
+          globalState.difficult = "average"
+          break
+        case "3":
+          globalState.difficult = "hard"
+          break
+        default:
+          break
+      }
+    })
   }
 }
 export { renderLevelDiff }
