@@ -1,7 +1,7 @@
 import { changeDifficultLevel } from "./changeDifficult.js"
-import { globalState } from "../general.js"
+//import { globalState } from "../general.js"
 function renderLevelDiff() {
-  globalState.renderElement.innerHTML = ` 
+  window.globalState.renderElement.innerHTML = ` 
 <section class="box">
 <h1 class="box__text">Выбери сложность</h1>
 <div class="box__numbers">
@@ -22,8 +22,8 @@ function checkButtons_pageLevelofDiffucult() {
   const buttonStart = document.querySelector(".box__button") // так как кнопка одна в коде, пишем querySelector а не querySelectorALL
 
   buttonStart.addEventListener("click", () => {
-    console.log(globalState.difficult)
-    if (!globalState.difficult) {
+    console.log(window.globalState.difficult)
+    if (!window.globalState.difficult) {
       alert("snachala viberite yroven")
       return
     }
@@ -34,13 +34,13 @@ function checkButtons_pageLevelofDiffucult() {
     levelsButtonElement.addEventListener("click", () => {
       switch (levelsButtonElement.textContent) {
         case "1":
-          globalState.difficult = "easy"
+          window.globalState.difficult = "easy"
           break
         case "2":
-          globalState.difficult = "average"
+          window.globalState.difficult = "average"
           break
         case "3":
-          globalState.difficult = "hard"
+          window.globalState.difficult = "hard"
           break
         default:
           break

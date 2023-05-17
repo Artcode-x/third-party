@@ -1,22 +1,22 @@
 import { renderLevelDiff } from "./someRender.js"
-import { globalState } from "../general.js"
+//import { globalState } from "../general.js"
 
 function changeDifficultLevel() {
-  switch (globalState.difficult) {
+  switch (window.globalState.difficult) {
     case "easy":
-      globalState.renderElement.innerHTML = `
+      window.globalState.renderElement.innerHTML = `
         <h1>Уровень для слабаков</h1>
         <button class="box__button">Назад </button>
         `
       break
     case "average":
-      globalState.renderElement.innerHTML = `
+      window.globalState.renderElement.innerHTML = `
     <h1>Уровень среднего пути )</h1>
     <button class="box__button">Назад </button>
     `
       break
     case "hard":
-      globalState.renderElement.innerHTML = `
+      window.globalState.renderElement.innerHTML = `
         <h1>Уровень не для всех</h1>
         <button class="box__button">Назад </button>
         `
