@@ -5,6 +5,8 @@
   "main": "general.js",
   "scripts": {
     "lint:css": "stylelint './src/**.css'",
+    "lint.js": "eslint ./**.js",
+    "lint": "npm run lint:js && npm run lint:css",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier -write ."
   },
