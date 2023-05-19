@@ -1,0 +1,27 @@
+{
+  "name": "third-party",
+  "version": "1.0.0",
+  "description": "",
+  "main": "general.js",
+  "scripts": {
+    "lint:css": "stylelint './src/**.css'",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier -write ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "axios": "^1.4.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.8",
+    "stylelint": "^14.8.2",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^25.0.0",
+    "stylelint-prettier": "^2.0.0"
+  }
+}
