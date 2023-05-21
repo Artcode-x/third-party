@@ -1,8 +1,8 @@
-import { renderLevelDiff } from "./components/someRender.js"
+import { renderLevelDiff } from './components/someRender.js'
 // глобальное состояние проекта
 window.globalState = {
-  difficult: "",
-  renderElement: document.getElementById("levels"),
+    difficult: '',
+    renderElement: document.getElementById('levels'),
 }
 
 renderLevelDiff()
