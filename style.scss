@@ -1,3 +1,95 @@
+/* stylelint-disable declaration-block-no-redundant-longhand-properties */
+/* stylelint-disable color-hex-length */
+/* stylelint-disable length-zero-no-unit */
+/* stylelint-disable keyframes-name-pattern */
+/* stylelint-disable color-function-notation */
+/* stylelint-disable alpha-value-notation */
+/* stylelint-disable function-url-quotes */
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+/* stylelint-disable selector-class-pattern */
+/* stylelint-disable rule-empty-line-before */
+/* stylelint-disable font-family-name-quotes */
+/* stylelint-disable prettier/prettier */
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__left-box {
+        width: 155px;
+        height: 91px;
+        color: #FFFFFF;
+    }
+
+    &__text {
+        font-size: 16px;
+
+        &-box {
+            display: flex;
+            gap: 57px;
+            padding-left: 61px;
+        }
+    }
+
+    &__time {
+        font-weight: 400;
+        font-size: 64px;
+        line-height: 72px;
+        padding-left: 22px;
+    }
+
+    &__again-button {
+        width: 246px;
+        height: 50px;
+        background: #7AC100;
+        border-radius: 12px;
+        border-style: none;
+        margin-right: 23px;
+    }
+}
+
+.game__cards {
+    margin-top: 35px;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 15px;
+    padding-right: 24px;
+    padding-left: 24px;
+
+    &-button {
+        width: 95px;
+        height: 133px;
+
+        &:hover {
+            animation: cards__visual 0.3s linear 0s 1 normal forwards;
+        }
+    }
+}
+
+.button-active {
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes cards__visual {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
+        transform: scale(1);
+    }
+
+    100% {
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+        transform: scale(1.1);
+    }
+}
+
 @font-face {
     font-family: "StratosSkyeng";
     font-style: normal;
@@ -5,6 +97,19 @@
     font-display: swap;
     src: url("stratosskyengweb-regular.woff2") format("woff2");
 }
+
+.cards-button {
+    width: 95px;
+    height: 133px;
+    background-image: url();
+    border-radius: 4px;
+    border-style: none;
+
+    &:hover {
+        animation: cards__visual 0.3s linear 0s 1 normal forwards;
+    }
+}
+
 
 .center {
     padding-left: calc(50% - 1024px / 2);
@@ -77,8 +182,164 @@ body {
             font-size: 64px;
             line-height: 72px;
             color: #0080c1;
+
+            &:hover {
+                animation: cards__visual 0.3s linear 0s 1 normal forwards;
+            }
         }
     }
+
+
+}
+
+.preset {
+    &__spadesA {
+        background-image: url(../third-party/img/png/туз\ пики.png);
+    }
+
+    &__spadesK {
+        background-image: url(../third-party/img/png/король\ пики.png);
+    }
+
+    &__spadesQ {
+        background-image: url(../third-party/img/png/дама\ пики.png);
+    }
+
+    &__spadesJ {
+        background-image: url(../third-party/img/png/валет\ пики.png);
+    }
+
+    &__spades10 {
+        background-image: url(../third-party/img/png/10\ пики.png);
+    }
+
+    &__spades9 {
+        background-image: url(../third-party/img/png/9\ пики.png);
+    }
+
+    &__spades8 {
+        background-image: url(../third-party/img/png/8\ пики.png);
+    }
+
+    &__spades7 {
+        background-image: url(../third-party/img/png/7\ пики.png);
+    }
+
+    &__spades6 {
+        background-image: url(../third-party/img/png/6\ пики.png);
+    }
+
+
+    &__heartsA {
+        background-image: url(../third-party/img/png/туз\ черви.png);
+    }
+
+    &__heartsK {
+        background-image: url(../third-party/img/png/король\ черви.png);
+    }
+
+    &__heartsQ {
+        background-image: url(../third-party/img/png/дама\ черви.png);
+    }
+
+    &__heartsJ {
+        background-image: url(../third-party/img/png/валет\ черви.png);
+    }
+
+    &__hearts10 {
+        background-image: url(../third-party/img/png/10\ черви.png);
+    }
+
+    &__hearts9 {
+        background-image: url(../third-party/img/png/9\ черви.png);
+    }
+
+    &__hearts8 {
+        background-image: url(../third-party/img/png/8\ черви.png)
+    }
+
+    &__hearts7 {
+        background-image: url(../third-party/img/png/7\ черви.png)
+    }
+
+    &__hearts6 {
+        background-image: url(../third-party/img/png/6\ черви.png);
+    }
+
+
+    &__christenA {
+        background-image: url(../third-party/img/png/туз\ крести.png);
+    }
+
+    &__christenK {
+        background-image: url(../third-party/img/png/король\ крести.png);
+    }
+
+    &__christenQ {
+        background-image: url(../third-party/img/png/дама\ крести.png);
+    }
+
+    &__christenJ {
+        background-image: url(../third-party/img/png/валет\ крести.png);
+    }
+
+    &__christen10 {
+        background-image: url(../third-party/img/png/10\ крести.png);
+    }
+
+    &__christen9 {
+        background-image: url(../third-party/img/png/9\ крести.png);
+    }
+
+    &__christen8 {
+        background-image: url(../third-party/img/png/8\ крести.png)
+    }
+
+    &__christen7 {
+        background-image: url(../third-party/img/png/7\ крести.png)
+    }
+
+    &__christen6 {
+        background-image: url(../third-party/img/png/6\ крести.png);
+    }
+
+
+    &__diamondsA {
+        background-image: url(../third-party/img/png/туз\ бубны.png);
+    }
+
+    &__diamondsK {
+        background-image: url(../third-party/img/png/король\ бубны.png);
+    }
+
+    &__diamondsQ {
+        background-image: url(../third-party/img/png/дама\ бубны.png);
+    }
+
+    &__diamondsJ {
+        background-image: url(../third-party/img/png/валет\ бубны\ \(1\).png);
+    }
+
+    &__diamonds10 {
+        background-image: url(../third-party/img/png/10\ бубны.png);
+    }
+
+    &__diamonds9 {
+        background-image: url(../third-party/img/png/9\ бубны.png);
+    }
+
+    &__diamonds8 {
+        background-image: url(../third-party/img/png/8\ бубны.png)
+    }
+
+    &__diamonds7 {
+        background-image: url(../third-party/img/png/7\ бубны.png)
+    }
+
+    &__diamonds6 {
+        background-image: url(../third-party/img/png/6\ бубны.png);
+    }
+
 
 
 }
