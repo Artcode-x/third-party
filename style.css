@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* stylelint-disable declaration-block-no-redundant-longhand-properties */
 /* stylelint-disable color-hex-length */
 /* stylelint-disable length-zero-no-unit */
@@ -162,4 +163,116 @@ body {
   font-size: 64px;
   line-height: 72px;
   color: #0080c1;
+}
+.box__numbers_count:hover {
+  animation: cards__visual 0.3s linear 0s 1 normal forwards;
+}
+
+.preset__spadesA {
+  background-image: url(../third-party/img/png/туз\ пики.png);
+}
+.preset__spadesK {
+  background-image: url(../third-party/img/png/король\ пики.png);
+}
+.preset__spadesQ {
+  background-image: url(../third-party/img/png/дама\ пики.png);
+}
+.preset__spadesJ {
+  background-image: url(../third-party/img/png/валет\ пики.png);
+}
+.preset__spades10 {
+  background-image: url(../third-party/img/png/10\ пики.png);
+}
+.preset__spades9 {
+  background-image: url(../third-party/img/png/9\ пики.png);
+}
+.preset__spades8 {
+  background-image: url(../third-party/img/png/8\ пики.png);
+}
+.preset__spades7 {
+  background-image: url(../third-party/img/png/7\ пики.png);
+}
+.preset__spades6 {
+  background-image: url(../third-party/img/png/6\ пики.png);
+}
+.preset__heartsA {
+  background-image: url(../third-party/img/png/туз\ черви.png);
+}
+.preset__heartsK {
+  background-image: url(../third-party/img/png/король\ черви.png);
+}
+.preset__heartsQ {
+  background-image: url(../third-party/img/png/дама\ черви.png);
+}
+.preset__heartsJ {
+  background-image: url(../third-party/img/png/валет\ черви.png);
+}
+.preset__hearts10 {
+  background-image: url(../third-party/img/png/10\ черви.png);
+}
+.preset__hearts9 {
+  background-image: url(../third-party/img/png/9\ черви.png);
+}
+.preset__hearts8 {
+  background-image: url(../third-party/img/png/8\ черви.png);
+}
+.preset__hearts7 {
+  background-image: url(../third-party/img/png/7\ черви.png);
+}
+.preset__hearts6 {
+  background-image: url(../third-party/img/png/6\ черви.png);
+}
+.preset__christenA {
+  background-image: url(../third-party/img/png/туз\ крести.png);
+}
+.preset__christenK {
+  background-image: url(../third-party/img/png/король\ крести.png);
+}
+.preset__christenQ {
+  background-image: url(../third-party/img/png/дама\ крести.png);
+}
+.preset__christenJ {
+  background-image: url(../third-party/img/png/валет\ крести.png);
+}
+.preset__christen10 {
+  background-image: url(../third-party/img/png/10\ крести.png);
+}
+.preset__christen9 {
+  background-image: url(../third-party/img/png/9\ крести.png);
+}
+.preset__christen8 {
+  background-image: url(../third-party/img/png/8\ крести.png);
+}
+.preset__christen7 {
+  background-image: url(../third-party/img/png/7\ крести.png);
+}
+.preset__christen6 {
+  background-image: url(../third-party/img/png/6\ крести.png);
+}
+.preset__diamondsA {
+  background-image: url(../third-party/img/png/туз\ бубны.png);
+}
+.preset__diamondsK {
+  background-image: url(../third-party/img/png/король\ бубны.png);
+}
+.preset__diamondsQ {
+  background-image: url(../third-party/img/png/дама\ бубны.png);
+}
+.preset__diamondsJ {
+  background-image: url(../third-party/img/png/валет\ бубны\ \(1\).png);
+}
+.preset__diamonds10 {
+  background-image: url(../third-party/img/png/10\ бубны.png);
+}
+.preset__diamonds9 {
+  background-image: url(../third-party/img/png/9\ бубны.png);
+}
+.preset__diamonds8 {
+  background-image: url(../third-party/img/png/8\ бубны.png);
+}
+.preset__diamonds7 {
+  background-image: url(../third-party/img/png/7\ бубны.png);
+}
+.preset__diamonds6 {
+  background-image: url(../third-party/img/png/6\ бубны.png);
 }/*# sourceMappingURL=style.css.map */

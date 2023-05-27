@@ -1,3 +1,4 @@
+import { randomTakeCard, randomButtonElements } from '../general.js'
 const timerElement = `
 <div class="header">
 <div class="header__left-box">
@@ -24,45 +25,28 @@ const timerElement = `
 //     {suit: 'spades', rank: '6', img './img/svg/'}
 // ]
 
+//cardArray.sort(() => Math.random() - 0.5)
+
+// const game = document.querySelector('.game_table')
+// cardDeck.sort(() => Math.random() - 0.5)
+
+// for (let i = 0; i < 3; i++) {
+//     const element = array[i]
+// }
+// finalCardDeck.sort(() => Math.random() - 0.5)
+
+// for (let i = 0; i < finalCardDeck.length; i++) {
+//     const card = document.createElement('img')
+//     card.src = './img/png/рубашка.png'
+//     card.classList.add('card')
+//     game?.appendChild(card)
+//     card.style.height = '100px'
+// }
+
 const presetCloseCards = `
 <div class= "game">
 ${timerElement}
 <div class = "game__cards">
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
-<button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
 <button class="game__cards-button"><img src="./img/png/рубашка.png" alt="рубашка"></button>
 `
 
@@ -113,17 +97,43 @@ ${timerElement}
 function renderPresetCards() {
     switch (window.globalState.difficult) {
         case 'easy':
-            window.globalState.renderElement.innerHTML = presetCloseCards
+            randomTakeCard(3)
+            window.globalState.renderElement.innerHTML = `
+            <div class="game">
+                ${timerElement}
+                <div class="game__cards"> 
+                ${randomButtonElements(6)} 
+                </div>
+            </div>
+            `
+            console.log(randomButtonElements(6))
             break
         case 'average':
-            window.globalState.renderElement.innerHTML = presetCloseCards
+            randomTakeCard(6)
+            window.globalState.renderElement.innerHTML = `
+            <div class="game">
+                ${timerElement}
+                <div class="game__cards"> 
+                ${randomButtonElements(12)} 
+                </div>
+            </div>
+            `
             break
         case 'hard':
-            window.globalState.renderElement.innerHTML = presetOpenCards
+            randomTakeCard(9)
+            window.globalState.renderElement.innerHTML = `
+            <div class="game">
+                ${timerElement}
+                <div class="game__cards"> 
+                ${randomButtonElements(18)} 
+                </div>
+            </div>
+            `
             break
         default:
             break
     }
+    console.log(window.globalState.randomCard)
     const cardButtonElements = document.querySelectorAll('.game__cards-button')
     for (const cardsButtonElement of cardsButtonElements) {
         cardButtonElement

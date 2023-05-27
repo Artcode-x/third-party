@@ -11,6 +11,7 @@ module.exports = {
         'stylelint-config-prettier',
         'stylelint-prettier/recommended',
     ],
+    // Для проверки файла scss
     customSyntax: 'postcss-scss',
     plugins: ['stylelint-scss'],
 }

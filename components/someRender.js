@@ -1,4 +1,4 @@
-import { changeDifficultLevel } from './changeDifficult.js'
+//import { changeDifficultLevel } from './changeDifficult.js'
 import { renderPresetCards } from './preset-cards-component.js'
 //import { globalState } from "../general.js"
 function renderLevelDiff() {
