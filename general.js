@@ -1,4 +1,5 @@
 import { renderLevelDiff } from './components/someRender.js'
+const {} = require('./style.css')
 // глобальное состояние проекта
 window.globalState = {
     difficult: '',

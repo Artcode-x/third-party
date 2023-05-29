@@ -134,9 +134,11 @@ function renderPresetCards() {
             break
     }
     console.log(window.globalState.randomCard)
-    const cardButtonElements = document.querySelectorAll('.game__cards-button')
+    const cardsButtonElements = document.querySelectorAll('.game__cards-button')
     for (const cardsButtonElement of cardsButtonElements) {
-        cardButtonElement
+        cardsButtonElement.addEventListener('click', () => {
+            console.log('VAY')
+        })
     }
 }
 
