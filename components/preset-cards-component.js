@@ -133,13 +133,43 @@ function renderPresetCards() {
         default:
             break
     }
-    console.log(window.globalState.randomCard)
-    const cardsButtonElements = document.querySelectorAll('.game__cards-button')
-    for (const cardsButtonElement of cardsButtonElements) {
-        cardsButtonElement.addEventListener('click', () => {
-            console.log('VAY')
-        })
-    }
+    // console.log(window.globalState.randomCard)
+
+    setTimeout(() => {
+        // window.globalState.renderElement.classList.remove('.game__cards')
+        // window.globalState.renderElement.classList.remove('.preset')
+        // window.globalState.renderElement.innerHTML = `
+        // ${presetCloseCards}
+        // `
+        const cardsButtonElements = document.querySelectorAll(
+            '.game__cards-button'
+        )
+        for (const cardsButtonElement of cardsButtonElements) {
+            cardsButtonElement.classList.remove(
+                `preset__${cardsButtonElement.dataset.preset}`
+            )
+
+            cardsButtonElement.classList.add('hide')
+        }
+        // обр-к клика вешается после срабатывания таймаута
+        for (const cardsButtonElement of cardsButtonElements) {
+            cardsButtonElement.addEventListener('click', () => {
+                console.log('VAY')
+                //нарисовать карту которую польз выбрал, обратно доб ся класс
+                cardsButtonElement.classList.add(
+                    `preset__${cardsButtonElement.dataset.preset}`
+                )
+                switch (key) {
+                    case value:
+                        break
+
+                    default:
+                        break
+                }
+            })
+        }
+        console.log('Delay for 5 seconds')
+    }, 5 * 1000)
 }
 
 export { renderPresetCards }

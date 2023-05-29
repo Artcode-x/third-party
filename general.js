@@ -1,5 +1,6 @@
 import { renderLevelDiff } from './components/someRender.js'
-const {} = require('./style.css')
+import './css/style.css'
+//const {} = require('./style.css')
 // глобальное состояние проекта
 window.globalState = {
     difficult: '',
@@ -10,6 +11,7 @@ window.globalState = {
 }
 
 // рандомный выбор 1 масти и 1 карты
+
 export function randomTakeCard(number) {
     // number = 3 либо 6 либо 9
     const randomPreset = new Array() // Указали что переменная будет массивом
@@ -47,6 +49,7 @@ export function randomTakeCard(number) {
     window.globalState.randomCard = [...randomPreset, ...randomPreset] // ... - массив первый, хотим обьеденить со вторым. Затем записать в нов-ый массив randomCard
     // ... - синаксис обьеденения двух массивов в новый массив
 }
+
 //запись всех рандомных кнопок
 export function randomButtonElements(number) {
     // 3/6/9
@@ -61,8 +64,8 @@ export function randomButtonElements(number) {
         ` // то что записывается в дата атрибут, записывается и в класс кнопки
 
         // убираем кнопки чтобы не задублировались
-        globalState.randomCard.splice(randomnoeChislo, 1) // 1 - то что удалить только один эл-т
-        console.log(globalState.randomCard)
+        window.globalState.randomCard.splice(randomnoeChislo, 1) // 1 - то что удалить только один эл-т
+        console.log(window.globalState.randomCard)
         // в дата атрибут preset записывается карта, из рандомного массива randomnoeChislo
         // из randomCard берется ранд карта и записывается в массив randomnoeChislo
     }
@@ -73,8 +76,6 @@ export function randomButtonElements(number) {
 console.log(window.globalState.randomCard)
 //randomButtonElements(6)
 renderLevelDiff()
-
-//export { globalState }
 
 //Последовательность реализации
 

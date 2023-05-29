@@ -4,7 +4,7 @@
     "description": "",
     "main": "general.js",
     "scripts": {
-        "build": "NODE_ENV=production webpack",
+        "build": "NODE_ENV=development webpack",
         "start": "webpack-dev-server --open",
         "lint:scss": "stylelint './*.scss'",
         "lint:js": "eslint ./**.js",
