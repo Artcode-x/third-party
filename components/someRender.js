@@ -25,7 +25,7 @@ function checkButtons_pageLevelofDiffucult() {
     const buttonStart = document.querySelector('.box__button') // так как кнопка одна в коде, пишем querySelector а не querySelectorALL
 
     buttonStart.addEventListener('click', () => {
-        console.log(window.globalState.difficult)
+        // console.log(window.globalState.difficult)
         if (!window.globalState.difficult) {
             alert('snachala viberite yroven')
             return

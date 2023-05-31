@@ -8,6 +8,8 @@ window.globalState = {
     cardMastyArray: ['spades', 'hearts', 'diamonds', 'christen'],
     ranksArray: ['A', 'K', 'Q', 'J', '10', '9', '8', '7', '6'],
     randomCard: [], // для способа 1 и 2
+    selectUserCard: [], // какие карты выбрал пользователь
+    keyForSwitch: '1 Card',
 }
 
 // рандомный выбор 1 масти и 1 карты
@@ -58,22 +60,22 @@ export function randomButtonElements(number) {
         const randomnoeChislo = Math.floor(
             Math.random() * window.globalState.randomCard.length // на основе массива randomCard - из него берем рандомные карты
         )
-        console.log(randomnoeChislo)
+        // console.log(randomnoeChislo)
         array[i] = `
         <button data-preset="${window.globalState.randomCard[randomnoeChislo]}" class="game__cards-button preset__${window.globalState.randomCard[randomnoeChislo]}"></button> 
         ` // то что записывается в дата атрибут, записывается и в класс кнопки
 
         // убираем кнопки чтобы не задублировались
         window.globalState.randomCard.splice(randomnoeChislo, 1) // 1 - то что удалить только один эл-т
-        console.log(window.globalState.randomCard)
+        //console.log(window.globalState.randomCard)
         // в дата атрибут preset записывается карта, из рандомного массива randomnoeChislo
         // из randomCard берется ранд карта и записывается в массив randomnoeChislo
     }
-    console.log(array.join(''))
+    //console.log(array.join(''))
     return array.join('') // возвращаем строку кнопок
 }
 //randomTakeCard(3)
-console.log(window.globalState.randomCard)
+//console.log(window.globalState.randomCard)
 //randomButtonElements(6)
 renderLevelDiff()
 

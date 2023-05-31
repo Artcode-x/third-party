@@ -154,22 +154,101 @@ function renderPresetCards() {
         // обр-к клика вешается после срабатывания таймаута
         for (const cardsButtonElement of cardsButtonElements) {
             cardsButtonElement.addEventListener('click', () => {
-                console.log('VAY')
+                console.log('выбрана карта')
                 //нарисовать карту которую польз выбрал, обратно доб ся класс
                 cardsButtonElement.classList.add(
                     `preset__${cardsButtonElement.dataset.preset}`
                 )
-                switch (key) {
-                    case value:
+                // // 1 вариант реализации
+                // if (window.globalState.selectUserCard.length === 0) {
+                //     window.globalState.selectUserCard.push(
+                //         cardsButtonElement.dataset.preset
+                //     )
+                //     cardsButtonElement.disabled = true
+                // } else if (
+                //     window.globalState.selectUserCard[0] ===
+                //     cardsButtonElement.dataset.preset
+                // )
+                //     alert('вы победили')
+                // else {
+                //     alert('фиаско')
+                // }
+
+                // 2 вариант реализации
+                switch (window.globalState.keyForSwitch) {
+                    case '1 Card':
+                        window.globalState.selectUserCard.push(
+                            cardsButtonElement.dataset.preset
+                        )
+                        // запрещаем чтобы не кликать повторно
+                        cardsButtonElement.disabled = true
+                        console.log(window.globalState.selectUserCard)
+                        window.globalState.keyForSwitch = '2 Card'
+
                         break
 
-                    default:
+                    case '2 Card':
+                        if (
+                            window.globalState.selectUserCard[0] ===
+                            cardsButtonElement.dataset.preset
+                        ) {
+                            alert('Это успех')
+                        } else {
+                            alert('это фиаско')
+                        }
+                        break
+
+                    default: // если не зашли ни в один кейс
                         break
                 }
+
+                //3 вариант реализации
+                // Когда используем 1 ключ в глобальной переменной globalState
+                // switch (window.globalState.keyForSwitch) {
+                //     case '1 Card':
+                //         window.globalState.keyForSwitch =
+                //             cardsButtonElement.dataset.preset // записываем напрямую то что находится в дата - атрибуте
+
+                //         // метод push только для работы с массивами, поэтому его исп-ть нельзя
+                //         // window.globalState.selectUserCard.push(
+                //         //     cardsButtonElement.dataset.preset
+                //         // )
+
+                //         // запрещаем чтобы не кликать повторно
+                //         cardsButtonElement.disabled = true
+
+                //         break
+
+                //     case cardsButtonElement.dataset.preset:
+                //         // если в keyForSwitch находится та же карта что и в cardsButtonElement.dataset.preset, - выигрыш
+                //         console.log('POBEDA')
+                //         break
+
+                //     default: // если не зашли ни в один кейс
+                //         console.log('PROIGRISH')
+                //         break
+                // }
+
+                //черновик
+                // if (window.globalState.selectUserCard.length === 0) {
+                //     window.globalState.selectUserCard.push(
+                //         cardsButtonElement.dataset.preset
+                //     )
+                //     // сразу хапрещаю повторный клик
+                //     cardsButtonElement.disable = true
+                //     console.log(window.globalState.selectUserCard)
+                // } else if (
+                //     //сравниваем карты
+                //     window.globalState.selectUserCard[0] ===
+                //     cardsButtonElement.dataset.preset
+                // ) {
+                //     //  удаляю карту из массива чтобы стал пустым
+                //     window.globalState.selectUserCard.delete[0]
+                // }
             })
         }
         console.log('Delay for 5 seconds')
-    }, 5 * 1000)
+    }, 2 * 1000)
 }
 
 export { renderPresetCards }
