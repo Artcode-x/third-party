@@ -1,7 +1,17 @@
-import { renderLevelDiff } from './components/someRender.js'
+import { renderLevelDiff } from './components/someRender'
 import './css/style.css'
 //const {} = require('./style.css')
 // глобальное состояние проекта
+declare global {
+    // декларируем об обьявлении глоб переменной
+
+    // инт-с - все что связано с работой в браузере. инт-с позволяет повторно добавлять новые св-ва, в отличии от type
+
+    // через interface указываем что обьект внутри window будет расширяемым (можно будет доб-ть новые св-ва)
+    interface Window {
+        globalState: any
+    }
+}
 window.globalState = {
     difficult: '',
     renderElement: document.getElementById('levels'),
@@ -10,27 +20,15 @@ window.globalState = {
     randomCard: [], // для способа 1 и 2
     selectUserCard: [], // какие карты выбрал пользователь
     keyForSwitch: '1 Card',
+    timerCheck: 'off',
 }
 
 // рандомный выбор 1 масти и 1 карты
-
-export function randomTakeCard(number) {
+let number: number
+export function randomTakeCard(number: number) {
     // number = 3 либо 6 либо 9
     const randomPreset = new Array() // Указали что переменная будет массивом
-    // let levelCountCards = new Number()
-    // switch (globalState.difficult) {
-    //     case 'easy':
-    //         levelCountCards = 3
-    //         break
-    //     case 'average':
-    //         levelCountCards = 6
-    //         break
-    //     case 'hard':
-    //         levelCountCards = 9
-    //         break
-    //     default:
-    //         break
-    // }
+
     for (let i = 0; i < number; i++) {
         let rand = Math.floor(
             Math.random() * window.globalState.cardMastyArray.length
@@ -42,10 +40,6 @@ export function randomTakeCard(number) {
         )
         let rankValue = window.globalState.ranksArray[rankRand]
 
-        // let peremennaya = rValue + rankValue   // 1 способ
-        // window.globalState.randomCard.push(peremennaya) // 1 способ
-
-        // window.globalState.randomCard[i] = rValue + rankValue // создаем перем-ую в которой масть и ранк // 2 способ
         randomPreset[i] = rValue + rankValue
     }
     window.globalState.randomCard = [...randomPreset, ...randomPreset] // ... - массив первый, хотим обьеденить со вторым. Затем записать в нов-ый массив randomCard
@@ -53,7 +47,7 @@ export function randomTakeCard(number) {
 }
 
 //запись всех рандомных кнопок
-export function randomButtonElements(number) {
+export function randomButtonElements(number: number) {
     // 3/6/9
     let array = new Array() // в этот массив будут записываться все рандомные кнопки
     for (let i = 0; i < number; i++) {
@@ -71,29 +65,7 @@ export function randomButtonElements(number) {
         // в дата атрибут preset записывается карта, из рандомного массива randomnoeChislo
         // из randomCard берется ранд карта и записывается в массив randomnoeChislo
     }
-    //console.log(array.join(''))
+
     return array.join('') // возвращаем строку кнопок
 }
-//randomTakeCard(3)
-//console.log(window.globalState.randomCard)
-//randomButtonElements(6)
 renderLevelDiff()
-
-//Последовательность реализации
-
-//Создаем глобальный обьект в который будем сохранять все состояния игры (ур-ни сложности)
-//
-
-// cardArray: [
-
-//     { cardSuit: 'hearts', rank: 'A', img: './img/svg/' },
-//     { cardSuit: 'hearts', rank: 'K', img: './img/svg/' },
-//     { cardSuit: 'hearts', rank: 'Q', img: './img/svg/' },
-//     { cardSuit: 'hearts', rank: 'J', img: './img/svg/' },
-//     { cardSuit: 'hearts', rank: '10', img: './img/svg/' },
-//     { cardSuit: 'hearts', rank: '9', img: './img/svg/' },
-//     { cardSuit: 'hearts', rank: '8', img: './img/svg/' },
-//     { cardSuit: 'hearts', rank: '7', img: './img/svg/' },
-//     { cardSuit: 'hearts', rank: '6', img: './img/svg/' },
-
-// ],

@@ -1,6 +1,6 @@
 const path = require('path') // импорт обьекта PATH из NODE_JS
 const HtmlWebpackPlugin = require('html-webpack-plugin') // импортируем плагин из установленного пакета (npm i html-webpack-plugin -D)
-const CopyPlugin = require('copy-webpack-plugin') // обращаемся к нужному пакету через ф-ию require.
+//const CopyPlugin = require('copy-webpack-plugin') // обращаемся к нужному пакету через ф-ию require.
 //До импорта - npm i copy-webpack-plugin --save-dev , затем испортируем нужный класс из необходимой зависимости. Далее инициализируем 26 стр-ка (new CopyPlagin)
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
@@ -8,7 +8,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 //const isProduction = process.env.NODE_ENV === 'development' // NODE_ENV - переменная окружения - для задания конфигурации приложения. Чтобы можно было сконфигрировать не исправляя исходный код.
 
 module.exports = {
-    entry: './general.js', // входная точка файл general.js
+    entry: './general.ts', // входная точка файл general.js
     output: {
         // точка выхода - дир-ия, в которую будет складываться весь собранный код.
         path: path.resolve(__dirname, 'dist'), // с помощью path - указываем что нужно создать папку dist в корне проекта. и весь код положить в нее.
@@ -24,6 +24,11 @@ module.exports = {
         rules: [
             // все лоадеры находятся в ключе "rules"
             {
+                test: /\.ts$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+            },
+            {
                 test: /\.css$/,
                 use: [
                     MiniCssExtractPlugin.loader,
@@ -35,6 +40,9 @@ module.exports = {
             { test: /\.(png|svg|jpg|jpeg|gif)$/i, type: 'asset/resource' }, //  Добавляем лоадер для обработки изображений.
             { test: /\.(woff|woff2|eot|ttf|otf)$/i, type: 'asset/resource' }, // webpack v5 внутри сод-т внут-ий модуль asset/resourse - который позволяет импортировать раличные шрифты без доп настроек. Добавляем лоадер для импорта шрифтов.
         ],
+    },
+    resolve: {
+        extensions: ['.ts', '.js'],
     },
     plugins: [
         // настройка которая содержит в себе массив
@@ -49,6 +57,7 @@ module.exports = {
     ],
     optimization: {
         minimizer: ['...', new CssMinimizerPlugin()],
+        minimize: true,
     },
     devtool: process.env.NODE_ENV === 'production' ? false : 'source-map',
 }

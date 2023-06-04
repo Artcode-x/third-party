@@ -11,6 +11,110 @@
 /* stylelint-disable font-family-name-quotes */
 /* stylelint-disable prettier/prettier */
 
+
+.win {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 1035px;
+    height: 774px;
+    background: #C2F5FF;
+
+    &__text {
+        font-family: 'StratosSkyeng';
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 48px;
+        padding-bottom: 28px;
+    }
+
+    &__text2 {
+        font-family: 'StratosSkyeng';
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 32px;
+        padding-bottom: 10px;
+    }
+
+    &__timer {
+        font-family: 'StratosSkyeng';
+        font-weight: 400;
+        font-size: 64px;
+        line-height: 72px;
+        padding-bottom: 40px;
+    }
+
+    &__button {
+        width: 246px;
+        height: 50px;
+        background: #7AC100;
+        border-radius: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+
+        &:hover {
+            animation: cards__visual 0.3s linear 0s 1 normal forwards;
+        }
+    }
+}
+
+.over {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 1035px;
+    height: 774px;
+    background: #C2F5FF;
+
+    &__text {
+        font-family: 'StratosSkyeng';
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 48px;
+        padding-bottom: 28px;
+    }
+
+    &__text2 {
+        font-family: 'StratosSkyeng';
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 32px;
+        padding-bottom: 10px;
+    }
+
+    &__timer {
+        font-family: 'StratosSkyeng';
+        font-weight: 400;
+        font-size: 64px;
+        line-height: 72px;
+        padding-bottom: 40px;
+    }
+
+    &__button {
+        width: 246px;
+        height: 50px;
+        background: #7AC100;
+        border-radius: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+
+        &:hover {
+            animation: cards__visual 0.3s linear 0s 1 normal forwards;
+        }
+    }
+}
+
+
 .hide {
     // display: none;
     background-image: url(../img/png/рубашка.png);
@@ -343,6 +447,10 @@ body {
     &__diamonds6 {
         background-image: url('../img/png/6\ бубны.png');
     }
+
+
+
+
 
 
 

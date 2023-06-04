@@ -2,7 +2,7 @@
     "name": "third-party",
     "version": "1.0.0",
     "description": "",
-    "main": "general.js",
+    "main": "general.ts",
     "scripts": {
         "build": "NODE_ENV=development webpack",
         "start": "webpack-dev-server --open",
@@ -10,7 +10,8 @@
         "lint:js": "eslint ./**.js",
         "lint": "npm run lint:js && npm run lint:scss",
         "dev": "echo \"Error: no test specified\" && exit 1",
-        "format": "prettier -write ."
+        "format": "prettier -write .",
+        "lint:ts": "tsc --noEmit"
     },
     "author": "",
     "license": "ISC",
@@ -33,6 +34,8 @@
         "stylelint-config-standard-scss": "^6.0.0",
         "stylelint-prettier": "^2.0.0",
         "stylelint-scss": "^5.0.0",
+        "ts-loader": "^9.4.3",
+        "typescript": "^5.1.3",
         "webpack": "^5.84.1",
         "webpack-cli": "^5.1.1",
         "webpack-dev-server": "^4.15.0"
