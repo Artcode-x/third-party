@@ -59,7 +59,7 @@ function renderPresetCards() {
         const cardsButtonElements = Array.from(
             document.querySelectorAll('.game__cards-button')
         )
-        startTimer()
+        startTimer() // когда появ-ся рубашка - запускается таймер
         for (const cardsButtonElement of cardsButtonElements) {
             // говорим что в cardsButtonElement есть html эл-т, только при этом условии зайдем в if
             if (cardsButtonElement instanceof HTMLElement) {
@@ -100,10 +100,10 @@ function renderPresetCards() {
                             cardsButtonElement.dataset.preset
                         ) {
                             // alert('Это успех')
-                            window.globalState.timerCheck = 'on'
+                            window.globalState.timerCheck = 'on' // ост таймера
                             renderWin()
                         } else {
-                            window.globalState.timerCheck = 'on'
+                            window.globalState.timerCheck = 'on' // остановка таймера
                             // alert('это фиаско')
                             renderOver()
                         }

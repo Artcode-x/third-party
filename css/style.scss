@@ -19,9 +19,19 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    width: 1035px;
-    height: 774px;
-    background: #C2F5FF;
+    width: 480px;
+    height: 459px;
+    margin-top: 158px;
+    margin-left: 272px;
+    background: #C2f5FF;
+    border-radius: 12px;
+
+
+    &__image {
+        background-image: url("../img/png/win.png");
+        width: 96px;
+        height: 96px;
+    }
 
     &__text {
         font-family: 'StratosSkyeng';
@@ -70,9 +80,18 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    width: 1035px;
-    height: 774px;
-    background: #C2F5FF;
+    width: 480px;
+    height: 459px;
+    margin-top: 158px;
+    margin-left: 272px;
+    background: #C2f5FF;
+    border-radius: 12px;
+
+    &__image {
+        background-image: url("../img/png/over.png");
+        width: 96px;
+        height: 96px;
+    }
 
     &__text {
         font-family: 'StratosSkyeng';
