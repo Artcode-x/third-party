@@ -22,6 +22,8 @@ window.globalState = {
     keyForSwitch: '1 Card',
     timerCheck: 'off',
     timer: '0',
+    countGenerateCards: 0,
+    openUserCards: 0,
 }
 
 // рандомный выбор 1 масти и 1 карты
