@@ -18,7 +18,7 @@ window.globalState = {
     cardMastyArray: ['spades', 'hearts', 'diamonds', 'christen'],
     ranksArray: ['A', 'K', 'Q', 'J', '10', '9', '8', '7', '6'],
     randomCard: [], // для способа 1 и 2
-    selectUserCard: [], // какие карты выбрал пользователь
+    selectUserCard: '', // какие карты выбрал пользователь
     keyForSwitch: '1 Card',
     timerCheck: 'off',
     timer: '0',

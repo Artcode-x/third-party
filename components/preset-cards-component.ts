@@ -77,7 +77,6 @@ function renderPresetCards() {
         // указываем что в cardsButtonElements можт находится любой тип, или будет ошибка
         for (const cardsButtonElement of cardsButtonElements as any) {
             cardsButtonElement.addEventListener('click', () => {
-                console.log('выбрана карта')
                 //нарисовать карту которую польз выбрал, обратно доб ся класс
                 cardsButtonElement.classList.add(
                     `preset__${cardsButtonElement.dataset.preset}`
@@ -86,9 +85,9 @@ function renderPresetCards() {
                 // 2 вариант реализации
                 switch (window.globalState.keyForSwitch) {
                     case '1 Card':
-                        window.globalState.selectUserCard.push(
+                        window.globalState.selectUserCard =
                             cardsButtonElement.dataset.preset
-                        )
+
                         // запрещаем чтобы не кликать повторно
                         cardsButtonElement.disabled = true
 
@@ -98,11 +97,11 @@ function renderPresetCards() {
 
                     case '2 Card':
                         if (
-                            window.globalState.selectUserCard[0] ===
+                            window.globalState.selectUserCard ===
                             cardsButtonElement.dataset.preset
                         ) {
                             window.globalState.keyForSwitch = '1 Card'
-                            window.globalState.selectUserCard = [] // очищаем чтобы могли сравнивать карты
+
                             // в этот момент открыто 2 карты
                             window.globalState.openUserCards =
                                 window.globalState.openUserCards + 2
@@ -111,11 +110,12 @@ function renderPresetCards() {
                                 window.globalState.openUserCards ===
                                 window.globalState.countGenerateCards
                             ) {
+                                window.globalState.timerCheck = 'on' // ост таймера
                                 renderWin()
                             }
 
                             // alert('Это успех')
-                            //  window.globalState.timerCheck = 'on' // ост таймера
+
                             //  renderWin()
                         } else {
                             window.globalState.timerCheck = 'on' // остановка таймера
@@ -129,8 +129,7 @@ function renderPresetCards() {
                 }
             })
         }
-        console.log('Delay for 5 seconds')
-    }, 2 * 1000)
+    }, 5 * 1000)
 }
 
 export { renderPresetCards }
