@@ -2,7 +2,8 @@ function startTimer() {
     const timerElement = document.querySelector('.header__time')
     let sec = 0
     let min = 0
-    let stopOrRunTimer: any //
+
+    // let stopOrRunTimer: any //
 
     function tick() {
         sec++
@@ -14,10 +15,6 @@ function startTimer() {
     }
     // ф-ия add запускает остановку таймера и ф-ию tick
     function add() {
-        if (window.globalState.timerCheck === 'on') {
-            clearTimeout(stopOrRunTimer) //  останавливает таймер
-            return
-        }
         tick() // прибавляет секунды и минуты
 
         // Отрисовка таймера
@@ -27,15 +24,21 @@ function startTimer() {
         //     timerElement.innerHTML =
         //     (min > 9 ? min : '0' + min) + ':' + (sec > 9 ? sec : '0' + sec)
         // }
-        timerElement!.innerHTML =
-            (min > 9 ? min : '0' + min) + ':' + (sec > 9 ? sec : '0' + sec) // если более 9 - то не нужен 0, т.к. двузначное число // если не двузначное - добавить 0
-        window.globalState.timer = timerElement!.innerHTML
+        if (timerElement instanceof HTMLElement) {
+            timerElement.innerHTML =
+                (min > 9 ? min : '0' + min) + ':' + (sec > 9 ? sec : '0' + sec) // если более 9 - то не нужен 0, т.к. двузначное число // если не двузначное - добавить 0
+            window.globalState.timer = timerElement.innerHTML
+        }
         timer()
         return
     }
 
     function timer() {
-        stopOrRunTimer = setTimeout(add, 1000) // внутри t нах-ся метод/ф-ия setTimeout, который через сек-ду зап-т ф-ию add
+        const stopOrRunTimer = setTimeout(add, 1000) // внутри t нах-ся метод/ф-ия setTimeout, который через сек-ду зап-т ф-ию add
+        if (window.globalState.timerCheck === 'on') {
+            clearTimeout(stopOrRunTimer) //  останавливает таймер
+            return
+        }
         return
     }
 

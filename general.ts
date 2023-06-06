@@ -2,6 +2,19 @@ import { renderLevelDiff } from './components/someRender'
 import './css/style.css'
 //const {} = require('./style.css')
 // глобальное состояние проекта
+interface globalArrayType {
+    difficult: string
+    renderElement: HTMLElement | null
+    cardMastyArray: Array<string> // скобки - generec-и
+    ranksArray: Array<string>
+    randomCard: Array<string>
+    selectUserCard: string | undefined
+    keyForSwitch: string
+    timerCheck: string
+    timer: string
+    countGenerateCards: number
+    openUserCards: number
+}
 declare global {
     // декларируем об обьявлении глоб переменной
 
@@ -9,7 +22,7 @@ declare global {
 
     // через interface указываем что обьект внутри window будет расширяемым (можно будет доб-ть новые св-ва)
     interface Window {
-        globalState: any
+        globalState: globalArrayType
     }
 }
 window.globalState = {
@@ -27,7 +40,7 @@ window.globalState = {
 }
 
 // рандомный выбор 1 масти и 1 карты
-let number: number
+
 export function randomTakeCard(number: number) {
     // number = 3 либо 6 либо 9
     const randomPreset = new Array() // Указали что переменная будет массивом

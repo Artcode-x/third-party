@@ -15,11 +15,12 @@ const timerElement = `
 `
 
 function renderPresetCards() {
-    switch (window.globalState.difficult) {
-        case 'easy':
-            window.globalState.countGenerateCards = 6
-            randomTakeCard(3)
-            window.globalState.renderElement.innerHTML = `
+    if (window.globalState.renderElement instanceof HTMLElement) {
+        switch (window.globalState.difficult) {
+            case 'easy':
+                window.globalState.countGenerateCards = 6
+                randomTakeCard(3)
+                window.globalState.renderElement.innerHTML = `
             <div class="game">
                 ${timerElement}
                 <div class="game__cards"> 
@@ -27,11 +28,11 @@ function renderPresetCards() {
                 </div>
             </div>
             `
-            break
-        case 'average':
-            window.globalState.countGenerateCards = 12
-            randomTakeCard(6)
-            window.globalState.renderElement.innerHTML = `
+                break
+            case 'average':
+                window.globalState.countGenerateCards = 12
+                randomTakeCard(6)
+                window.globalState.renderElement.innerHTML = `
             <div class="game">
                 ${timerElement}
                 <div class="game__cards"> 
@@ -39,11 +40,11 @@ function renderPresetCards() {
                 </div>
             </div>
             `
-            break
-        case 'hard':
-            window.globalState.countGenerateCards = 18
-            randomTakeCard(9)
-            window.globalState.renderElement.innerHTML = `
+                break
+            case 'hard':
+                window.globalState.countGenerateCards = 18
+                randomTakeCard(9)
+                window.globalState.renderElement.innerHTML = `
             <div class="game">
                 ${timerElement}
                 <div class="game__cards"> 
@@ -51,11 +52,11 @@ function renderPresetCards() {
                 </div>
             </div>
             `
-            break
-        default:
-            break
+                break
+            default:
+                break
+        }
     }
-
     setTimeout(() => {
         // записываем в переменную массив из селекторов (классов), Array.from  - обозначили что .game__cards-button - массив
         const cardsButtonElements = Array.from(
@@ -75,57 +76,62 @@ function renderPresetCards() {
         // обр-к клика вешается после срабатывания таймаута
 
         // указываем что в cardsButtonElements можт находится любой тип, или будет ошибка
-        for (const cardsButtonElement of cardsButtonElements as any) {
+        for (const cardsButtonElement of cardsButtonElements) {
             cardsButtonElement.addEventListener('click', () => {
-                //нарисовать карту которую польз выбрал, обратно доб ся класс
-                cardsButtonElement.classList.add(
-                    `preset__${cardsButtonElement.dataset.preset}`
-                )
+                if (cardsButtonElement instanceof HTMLElement) {
+                    //нарисовать карту которую польз выбрал, обратно доб ся класс
+                    cardsButtonElement.classList.add(
+                        `preset__${cardsButtonElement.dataset.preset}`
+                    )
 
-                // 2 вариант реализации
-                switch (window.globalState.keyForSwitch) {
-                    case '1 Card':
-                        window.globalState.selectUserCard =
-                            cardsButtonElement.dataset.preset
-
-                        // запрещаем чтобы не кликать повторно
-                        cardsButtonElement.disabled = true
-
-                        window.globalState.keyForSwitch = '2 Card'
-
-                        break
-
-                    case '2 Card':
-                        if (
-                            window.globalState.selectUserCard ===
-                            cardsButtonElement.dataset.preset
-                        ) {
-                            window.globalState.keyForSwitch = '1 Card'
-
-                            // в этот момент открыто 2 карты
-                            window.globalState.openUserCards =
-                                window.globalState.openUserCards + 2
+                    // 2 вариант реализации
+                    switch (window.globalState.keyForSwitch) {
+                        case '1 Card':
+                            window.globalState.selectUserCard =
+                                cardsButtonElement.dataset.preset
 
                             if (
-                                window.globalState.openUserCards ===
-                                window.globalState.countGenerateCards
+                                cardsButtonElement instanceof HTMLButtonElement
                             ) {
-                                window.globalState.timerCheck = 'on' // ост таймера
-                                renderWin()
+                                // запрещаем чтобы не кликать повторно
+                                cardsButtonElement.disabled = true
                             }
+                            window.globalState.keyForSwitch = '2 Card'
 
-                            // alert('Это успех')
+                            break
 
-                            //  renderWin()
-                        } else {
-                            window.globalState.timerCheck = 'on' // остановка таймера
-                            // alert('это фиаско')
-                            renderOver()
-                        }
-                        break
+                        case '2 Card':
+                            if (
+                                window.globalState.selectUserCard ===
+                                cardsButtonElement.dataset.preset
+                            ) {
+                                window.globalState.keyForSwitch = '1 Card'
 
-                    default: // если не зашли ни в один кейс
-                        break
+                                // в этот момент открыто 2 карты
+                                window.globalState.openUserCards =
+                                    window.globalState.openUserCards + 2
+
+                                if (
+                                    window.globalState.openUserCards ===
+                                    window.globalState.countGenerateCards
+                                ) {
+                                    window.globalState.timerCheck = 'on' // ост таймера
+                                    renderWin()
+                                }
+
+                                // alert('Это успех')
+
+                                //  renderWin()
+                            } else {
+                                window.globalState.timerCheck = 'on' // остановка таймера
+                                // alert('это фиаско')
+                                renderOver()
+                            }
+                            break
+
+                        default: // если не зашли ни в один кейс
+                            break
+                    }
                 }
             })
         }

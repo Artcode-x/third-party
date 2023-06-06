@@ -1,7 +1,8 @@
 import { renderPresetCards } from './preset-cards-component'
 
 function renderLevelDiff() {
-    window.globalState.renderElement.innerHTML = ` 
+    if (window.globalState.renderElement instanceof HTMLElement) {
+        window.globalState.renderElement.innerHTML = ` 
 <section class="box">
 <h1 class="box__text">Выбери сложность</h1>
 <div class="box__numbers">
@@ -12,6 +13,7 @@ function renderLevelDiff() {
 <button id="timer" class="box__button">Старт</button>
 </section>
 `
+    }
     checkButtonsPageLevelofDiffucult()
 }
 
