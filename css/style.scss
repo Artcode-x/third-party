@@ -1,24 +1,10 @@
-/* stylelint-disable declaration-block-no-redundant-longhand-properties */
-/* stylelint-disable color-hex-length */
-/* stylelint-disable length-zero-no-unit */
-/* stylelint-disable keyframes-name-pattern */
-/* stylelint-disable color-function-notation */
-/* stylelint-disable alpha-value-notation */
-/* stylelint-disable function-url-quotes */
-/* stylelint-disable font-family-no-missing-generic-family-keyword */
-/* stylelint-disable selector-class-pattern */
-/* stylelint-disable rule-empty-line-before */
-/* stylelint-disable font-family-name-quotes */
-/* stylelint-disable prettier/prettier */
-
-
 .win {
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    //  flex-wrap: wrap;
     width: 480px;
     height: 459px;
     margin-top: 158px;

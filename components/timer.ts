@@ -3,7 +3,7 @@ function startTimer() {
     let sec = 0
     let min = 0
 
-    let stopOrRunTimer: NodeJS.Timeout //
+    // let stopOrRunTimer: any //
 
     function tick() {
         sec++
@@ -16,10 +16,7 @@ function startTimer() {
     // ф-ия add запускает остановку таймера и ф-ию tick
     function add() {
         tick() // прибавляет секунды и минуты
-        if (window.globalState.timerCheck === 'on') {
-            clearTimeout(stopOrRunTimer) //  останавливает таймер
-            return
-        }
+
         // Отрисовка таймера
 
         //либо воск знак , либо эта проверка
@@ -37,8 +34,11 @@ function startTimer() {
     }
 
     function timer() {
-        stopOrRunTimer = setTimeout(add, 1000) // внутри t нах-ся метод/ф-ия setTimeout, который через сек-ду зап-т ф-ию add
-
+        const stopOrRunTimer = setTimeout(add, 1000) // внутри t нах-ся метод/ф-ия setTimeout, который через сек-ду зап-т ф-ию add
+        if (window.globalState.timerCheck === 'on') {
+            clearTimeout(stopOrRunTimer) //  останавливает таймер
+            return
+        }
         return
     }
 
