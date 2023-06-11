@@ -1,0 +1,376 @@
+@charset "UTF-8";
+.win {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  width: 480px;
+  height: 459px;
+  margin-top: 158px;
+  margin-left: 272px;
+  background: #C2f5FF;
+  border-radius: 12px;
+}
+.win__image {
+  background-image: url("../img/png/win.png");
+  width: 96px;
+  height: 96px;
+}
+.win__text {
+  font-family: "StratosSkyeng";
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  padding-bottom: 28px;
+}
+.win__text2 {
+  font-family: "StratosSkyeng";
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  padding-bottom: 10px;
+}
+.win__timer {
+  font-family: "StratosSkyeng";
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 72px;
+  padding-bottom: 40px;
+}
+.win__button {
+  width: 246px;
+  height: 50px;
+  background: #7AC100;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.win__button:hover {
+  animation: cards__visual 0.3s linear 0s 1 normal forwards;
+}
+
+.over {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 480px;
+  height: 459px;
+  margin-top: 158px;
+  margin-left: 272px;
+  background: #C2f5FF;
+  border-radius: 12px;
+}
+.over__image {
+  background-image: url("../img/png/over.png");
+  width: 96px;
+  height: 96px;
+}
+.over__text {
+  font-family: "StratosSkyeng";
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  padding-bottom: 28px;
+}
+.over__text2 {
+  font-family: "StratosSkyeng";
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  padding-bottom: 10px;
+}
+.over__timer {
+  font-family: "StratosSkyeng";
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 72px;
+  padding-bottom: 40px;
+}
+.over__button {
+  width: 246px;
+  height: 50px;
+  background: #7AC100;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.over__button:hover {
+  animation: cards__visual 0.3s linear 0s 1 normal forwards;
+}
+
+.hide {
+  background-image: url(../img/png/рубашка.png);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__left-box {
+  width: 155px;
+  height: 91px;
+  color: #FFFFFF;
+}
+.header__text {
+  font-size: 16px;
+}
+.header__text-box {
+  display: flex;
+  gap: 57px;
+  padding-left: 61px;
+}
+.header__time {
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 72px;
+  padding-left: 22px;
+}
+.header__again-button {
+  width: 246px;
+  height: 50px;
+  background: #7AC100;
+  border-radius: 12px;
+  border-style: none;
+  margin-right: 23px;
+}
+
+.game__cards {
+  margin-top: 35px;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 15px;
+  padding-right: 24px;
+  padding-left: 24px;
+}
+.game__cards-button {
+  width: 95px;
+  height: 133px;
+}
+.game__cards-button:hover {
+  animation: cards__visual 0.3s linear 0s 1 normal forwards;
+}
+
+.button-active {
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes cards__visual {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
+    transform: scale(1);
+  }
+  100% {
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    transform: scale(1.1);
+  }
+}
+@font-face {
+  font-family: "StratosSkyeng";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../stratosskyengweb-regular.woff2") format("woff2");
+}
+.cards-button {
+  width: 95px;
+  height: 133px;
+  border-radius: 4px;
+  border-style: none;
+}
+.cards-button:hover {
+  animation: cards__visual 0.3s linear 0s 1 normal forwards;
+}
+
+.center {
+  padding-left: calc(50% - 512px);
+  padding-right: calc(50% - 512px);
+}
+
+body {
+  background-color: #004980;
+  font-family: "StratosSkyeng";
+}
+
+.box {
+  width: 480px;
+  height: 459px;
+  margin-top: 158px;
+  margin-left: 272px;
+  background: #C2f5FF;
+  border-radius: 12px;
+}
+.box__button {
+  width: 246px;
+  height: 50px;
+  margin-left: 117px;
+  margin-right: 117px;
+  margin-bottom: 48px;
+  margin-top: 67px;
+  background: #7ac100;
+  border-radius: 12px;
+  border: none;
+  font-weight: 400px;
+  font-size: 24px;
+  line-height: 32px;
+  color: #ffffff;
+}
+.box__text {
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  padding-top: 52px;
+  padding-left: 136px;
+  padding-right: 136px;
+  margin-bottom: 48px;
+  text-align: center;
+  font-family: "StratosSkyeng";
+  font-feature-settings: "pnum" on, "lnum" on;
+  color: #004980;
+}
+.box__numbers {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 24px;
+}
+.box__numbers_count {
+  width: 98px;
+  height: 98px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: none;
+  font-family: "StratosSkyeng";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 72px;
+  color: #0080c1;
+}
+.box__numbers_count:hover {
+  animation: cards__visual 0.3s linear 0s 1 normal forwards;
+}
+
+.preset__spadesA {
+  background-image: url("../img/png/туз пики.png");
+}
+.preset__spadesK {
+  background-image: url("../img/png/король пики.png");
+}
+.preset__spadesQ {
+  background-image: url("../img/png/дама пики.png");
+}
+.preset__spadesJ {
+  background-image: url("../img/png/валет пики.png");
+}
+.preset__spades10 {
+  background-image: url("../img/png/10 пики.png");
+}
+.preset__spades9 {
+  background-image: url("../img/png/9 пики.png");
+}
+.preset__spades8 {
+  background-image: url("../img/png/8 пики.png");
+}
+.preset__spades7 {
+  background-image: url("../img/png/7 пики.png");
+}
+.preset__spades6 {
+  background-image: url("../img/png/6 пики.png");
+}
+.preset__heartsA {
+  background-image: url("../img/png/туз черви.png");
+}
+.preset__heartsK {
+  background-image: url("../img/png/король черви.png");
+}
+.preset__heartsQ {
+  background-image: url("../img/png/дама черви.png");
+}
+.preset__heartsJ {
+  background-image: url("../img/png/валет черви.png");
+}
+.preset__hearts10 {
+  background-image: url("../img/png/10 черви.png");
+}
+.preset__hearts9 {
+  background-image: url("../img/png/9 черви.png");
+}
+.preset__hearts8 {
+  background-image: url("../img/png/8 черви.png");
+}
+.preset__hearts7 {
+  background-image: url("../img/png/7 черви.png");
+}
+.preset__hearts6 {
+  background-image: url("../img/png/6 черви.png");
+}
+.preset__christenA {
+  background-image: url("../img/png/туз крести.png");
+}
+.preset__christenK {
+  background-image: url("../img/png/король крести.png");
+}
+.preset__christenQ {
+  background-image: url("../img/png/дама крести.png");
+}
+.preset__christenJ {
+  background-image: url("../img/png/валет крести.png");
+}
+.preset__christen10 {
+  background-image: url("../img/png/10 крести.png");
+}
+.preset__christen9 {
+  background-image: url("../img/png/9 крести.png");
+}
+.preset__christen8 {
+  background-image: url("../img/png/8 крести.png");
+}
+.preset__christen7 {
+  background-image: url("../img/png/7 крести.png");
+}
+.preset__christen6 {
+  background-image: url("../img/png/6 крести.png");
+}
+.preset__diamondsA {
+  background-image: url("../img/png/туз бубны.png");
+}
+.preset__diamondsK {
+  background-image: url("../img/png/король бубны.png");
+}
+.preset__diamondsQ {
+  background-image: url("../img/png/дама бубны.png");
+}
+.preset__diamondsJ {
+  background-image: url("../img/png/валет бубны (1).png");
+}
+.preset__diamonds10 {
+  background-image: url("../img/png/10 бубны.png");
+}
+.preset__diamonds9 {
+  background-image: url("../img/png/9 бубны.png");
+}
+.preset__diamonds8 {
+  background-image: url("../img/png/8 бубны.png");
+}
+.preset__diamonds7 {
+  background-image: url("../img/png/7 бубны.png");
+}
+.preset__diamonds6 {
+  background-image: url("../img/png/6 бубны.png");
+}/*# sourceMappingURL=style.css.map */
