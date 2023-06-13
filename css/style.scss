@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .win {
     display: flex;
     flex-direction: column;
@@ -9,18 +14,17 @@
     height: 459px;
     margin-top: 158px;
     margin-left: 272px;
-    background: #C2f5FF;
+    background: #c2f5ff;
     border-radius: 12px;
 
-
     &__image {
-        background-image: url("../img/png/win.png");
+        background-image: url('../img/png/win.png');
         width: 96px;
         height: 96px;
     }
 
     &__text {
-        font-family: 'StratosSkyeng';
+        font-family: StratosSkyeng, sans-serif;
         font-weight: 400;
         font-size: 40px;
         line-height: 48px;
@@ -28,7 +32,7 @@
     }
 
     &__text2 {
-        font-family: 'StratosSkyeng';
+        font-family: StratosSkyeng, sans-serif;
         font-weight: 400;
         font-size: 24px;
         line-height: 32px;
@@ -36,7 +40,7 @@
     }
 
     &__timer {
-        font-family: 'StratosSkyeng';
+        font-family: StratosSkyeng, sans-serif;
         font-weight: 400;
         font-size: 64px;
         line-height: 72px;
@@ -46,7 +50,7 @@
     &__button {
         width: 246px;
         height: 50px;
-        background: #7AC100;
+        background: #7ac100;
         border-radius: 12px;
         display: flex;
         justify-content: center;
@@ -54,7 +58,7 @@
         color: white;
 
         &:hover {
-            animation: cards__visual 0.3s linear 0s 1 normal forwards;
+            animation: cards-visual 0.3s linear 0s 1 normal forwards;
         }
     }
 }
@@ -65,22 +69,22 @@
     align-content: center;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     width: 480px;
     height: 459px;
     margin-top: 158px;
     margin-left: 272px;
-    background: #C2f5FF;
+    background: #c2f5ff;
     border-radius: 12px;
 
     &__image {
-        background-image: url("../img/png/over.png");
+        background-image: url('../img/png/over.png');
         width: 96px;
         height: 96px;
     }
 
     &__text {
-        font-family: 'StratosSkyeng';
+        font-family: StratosSkyeng, sans-serif;
         font-weight: 400;
         font-size: 40px;
         line-height: 48px;
@@ -88,7 +92,7 @@
     }
 
     &__text2 {
-        font-family: 'StratosSkyeng';
+        font-family: StratosSkyeng, sans-serif;
         font-weight: 400;
         font-size: 24px;
         line-height: 32px;
@@ -96,7 +100,7 @@
     }
 
     &__timer {
-        font-family: 'StratosSkyeng';
+        font-family: StratosSkyeng, sans-serif;
         font-weight: 400;
         font-size: 64px;
         line-height: 72px;
@@ -106,7 +110,7 @@
     &__button {
         width: 246px;
         height: 50px;
-        background: #7AC100;
+        background: #7ac100;
         border-radius: 12px;
         display: flex;
         justify-content: center;
@@ -114,20 +118,14 @@
         color: white;
 
         &:hover {
-            animation: cards__visual 0.3s linear 0s 1 normal forwards;
+            animation: cards-visual 0.3s linear 0s 1 normal forwards;
         }
     }
 }
 
-
 .hide {
     // display: none;
-    background-image: url(../img/png/рубашка.png);
-}
-
-* {
-    margin: 0;
-    padding: 0;
+    background-image: url('../img/png/рубашка.png');
 }
 
 .header {
@@ -138,7 +136,7 @@
     &__left-box {
         width: 155px;
         height: 91px;
-        color: #FFFFFF;
+        color: #fff;
     }
 
     &__text {
@@ -161,54 +159,56 @@
     &__again-button {
         width: 246px;
         height: 50px;
-        background: #7AC100;
+        background: #7ac100;
         border-radius: 12px;
         border-style: none;
         margin-right: 23px;
     }
 }
 
-.game__cards {
-    margin-top: 35px;
-    display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    gap: 15px;
-    padding-right: 24px;
-    padding-left: 24px;
+.game {
+    &__cards {
+        margin-top: 35px;
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        gap: 15px;
+        padding-right: 24px;
+        padding-left: 24px;
 
-    &-button {
-        width: 95px;
-        height: 133px;
-        //  background-image: url(../img/png/рубашка.png);
+        &-button {
+            width: 95px;
+            height: 133px;
+            //  background-image: url(../img/png/рубашка.png);
 
-        &:hover {
-            animation: cards__visual 0.3s linear 0s 1 normal forwards;
+            &:hover {
+                animation: cards-visual 0.3s linear 0s 1 normal forwards;
+            }
         }
     }
 }
 
 .button-active {
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 5px black;
 }
 
-@keyframes cards__visual {
+@keyframes cards-visual {
     0% {
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 0 0 black;
         transform: scale(1);
     }
 
     100% {
-        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+        box-shadow: 0 0 20px 0 black;
         transform: scale(1.1);
     }
 }
 
 @font-face {
-    font-family: "StratosSkyeng";
+    font-family: StratosSkyeng, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url("../stratosskyengweb-regular.woff2") format("woff2");
+    src: url('../stratosskyengweb-regular.woff2') format('woff2');
 }
 
 .cards-button {
@@ -219,10 +219,9 @@
     border-style: none;
 
     &:hover {
-        animation: cards__visual 0.3s linear 0s 1 normal forwards;
+        animation: cards-visual 0.3s linear 0s 1 normal forwards;
     }
 }
-
 
 .center {
     padding-left: calc(50% - 1024px / 2);
@@ -231,7 +230,7 @@
 
 body {
     background-color: #004980;
-    font-family: "StratosSkyeng";
+    font-family: StratosSkyeng, sans-serif;
 }
 
 .box {
@@ -239,25 +238,24 @@ body {
     height: 459px;
     margin-top: 158px;
     margin-left: 272px;
-    background: #C2f5FF;
+    background: #c2f5ff;
     border-radius: 12px;
 
     &__button {
         width: 246px;
         height: 50px;
-        margin-left: 117px;
-        margin-right: 117px;
-        margin-bottom: 48px;
-        margin-top: 67px;
+        // margin-left: 117px;
+        // margin-right: 117px;
+        // margin-bottom: 48px;
+        // margin-top: 67px;
+        margin: 67px 117px 48px;
         background: #7ac100;
         border-radius: 12px;
         border: none;
-
         font-weight: 400px;
         font-size: 24px;
         line-height: 32px;
-        color: #ffffff;
-
+        color: #fff;
     }
 
     &__text {
@@ -269,8 +267,8 @@ body {
         padding-right: 136px;
         margin-bottom: 48px;
         text-align: center;
-        font-family: "StratosSkyeng";
-        font-feature-settings: "pnum" on, "lnum" on;
+        font-family: StratosSkyeng, sans-serif;
+        font-feature-settings: 'pnum' on, 'lnum' on;
         color: #004980;
     }
 
@@ -285,11 +283,10 @@ body {
         &_count {
             width: 98px;
             height: 98px;
-            background: #ffffff;
+            background: #fff;
             border-radius: 12px;
             border: none;
-
-            font-family: "StratosSkyeng";
+            font-family: StratosSkyeng, sans-serif;
             font-style: normal;
             font-weight: 400;
             font-size: 64px;
@@ -297,12 +294,10 @@ body {
             color: #0080c1;
 
             &:hover {
-                animation: cards__visual 0.3s linear 0s 1 normal forwards;
+                animation: cards-visual 0.3s linear 0s 1 normal forwards;
             }
         }
     }
-
-
 }
 
 .preset {
@@ -342,7 +337,6 @@ body {
         background-image: url('../img/png/6\ пики.png');
     }
 
-
     &__heartsA {
         background-image: url('../img/png/туз\ черви.png');
     }
@@ -368,17 +362,16 @@ body {
     }
 
     &__hearts8 {
-        background-image: url('../img/png/8\ черви.png')
+        background-image: url('../img/png/8\ черви.png');
     }
 
     &__hearts7 {
-        background-image: url('../img/png/7\ черви.png')
+        background-image: url('../img/png/7\ черви.png');
     }
 
     &__hearts6 {
         background-image: url('../img/png/6\ черви.png');
     }
-
 
     &__christenA {
         background-image: url('../img/png/туз\ крести.png');
@@ -405,17 +398,16 @@ body {
     }
 
     &__christen8 {
-        background-image: url('../img/png/8\ крести.png')
+        background-image: url('../img/png/8\ крести.png');
     }
 
     &__christen7 {
-        background-image: url('../img/png/7\ крести.png')
+        background-image: url('../img/png/7\ крести.png');
     }
 
     &__christen6 {
         background-image: url('../img/png/6\ крести.png');
     }
-
 
     &__diamondsA {
         background-image: url('../img/png/туз\ бубны.png');
@@ -442,21 +434,14 @@ body {
     }
 
     &__diamonds8 {
-        background-image: url('../img/png/8\ бубны.png')
+        background-image: url('../img/png/8\ бубны.png');
     }
 
     &__diamonds7 {
-        background-image: url('../img/png/7\ бубны.png')
+        background-image: url('../img/png/7\ бубны.png');
     }
 
     &__diamonds6 {
         background-image: url('../img/png/6\ бубны.png');
     }
-
-
-
-
-
-
-
 }
