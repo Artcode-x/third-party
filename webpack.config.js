@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-env node */
 const path = require('path') // импорт обьекта PATH из NODE_JS
 const HtmlWebpackPlugin = require('html-webpack-plugin') // импортируем плагин из установленного пакета (npm i html-webpack-plugin -D)
 //const CopyPlugin = require('copy-webpack-plugin') // обращаемся к нужному пакету через ф-ию require.

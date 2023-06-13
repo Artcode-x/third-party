@@ -36,10 +36,10 @@ function checkButtonNewGame() {
     const reloadGame = document.querySelector('.win__button')
     if (reloadGame instanceof HTMLElement) {
         reloadGame.addEventListener('click', () => {
-            window.globalState.timer = '0' // сбрасываем таймер
-            window.globalState.selectUserCard = '' // сброс выбора карт
-            window.globalState.keyForSwitch = '1 Card' // чтобы зайти в 1 кейс
-            window.globalState.timerCheck = 'off' // сбрасываем timerCheck в начальное сост-ие чтобы таймер запускался
+            window.globalState.timer = '0'
+            window.globalState.selectUserCard = ''
+            window.globalState.keyForSwitch = '1 Card'
+            window.globalState.timerCheck = 'off'
             renderLevelDiff()
         })
     }

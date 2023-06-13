@@ -16,34 +16,22 @@ function renderLevelDiff() {
     }
     checkButtonsPageLevelofDiffucult()
 }
-
-//let timerInput = document.getElementById('timer')
-
-// ф-ия для отслеживания всех кнопок
-
 function checkButtonsPageLevelofDiffucult() {
-    const levelsButtonElements = document.querySelectorAll(
-        '.box__numbers_count'
+    const levelsButtonElements = Array.from(
+        document.querySelectorAll('.box__numbers_count')
     )
-    const buttonStart = document.querySelector('.box__button') // так как кнопка одна в коде, пишем querySelector а не querySelectorALL
-
-    // ! - нисмотря на то что находится в buttonStart - выполнить код далее (для ts), по типу any // buttonStart!.addEventListener('click', () => {
-
-    // говорим что в cardsButtonElement есть html эл-т, только при этом условии зайдем в if.
-    // if это ключ безопасности. Мы не зайдем в if если buttonStart не является html эл-ом.
+    const buttonStart = document.querySelector('.box__button')
     if (buttonStart instanceof HTMLElement) {
         buttonStart.addEventListener('click', () => {
             if (!window.globalState.difficult) {
                 alert('snachala viberite yroven')
                 return
             }
-            // changeDifficultLevel()
             renderPresetCards()
         })
     }
 
-    for (const levelsButtonElement of levelsButtonElements as any) {
-        // 1 произвольное название (один элемент к которому обращаемся), 2 - название самой переменной (все эл-ты)
+    for (const levelsButtonElement of levelsButtonElements) {
         levelsButtonElement.addEventListener('click', () => {
             switch (levelsButtonElement.textContent) {
                 case '1':

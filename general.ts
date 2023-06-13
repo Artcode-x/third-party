@@ -58,30 +58,24 @@ export function randomTakeCard(number: number) {
 
         randomPreset[i] = rValue + rankValue
     }
-    window.globalState.randomCard = [...randomPreset, ...randomPreset] // ... - массив первый, хотим обьеденить со вторым. Затем записать в нов-ый массив randomCard
-    // ... - синаксис обьеденения двух массивов в новый массив
+    window.globalState.randomCard = [...randomPreset, ...randomPreset]
 }
 
 //запись всех рандомных кнопок
 export function randomButtonElements(number: number) {
     // 3/6/9
-    const array = [] //new Array() // в этот массив будут записываться все рандомные кнопки
+    const array = []
     for (let i = 0; i < number; i++) {
         const randomnoeChislo = Math.floor(
-            Math.random() * window.globalState.randomCard.length // на основе массива randomCard - из него берем рандомные карты
+            Math.random() * window.globalState.randomCard.length
         )
 
         array[i] = `
         <button data-preset="${window.globalState.randomCard[randomnoeChislo]}" class="game__cards-button preset__${window.globalState.randomCard[randomnoeChislo]}"></button> 
-        ` // то что записывается в дата атрибут, записывается и в класс кнопки
-
-        // убираем кнопки чтобы не задублировались
-        window.globalState.randomCard.splice(randomnoeChislo, 1) // 1 - то что удалить только один эл-т
-        //console.log(window.globalState.randomCard)
-        // в дата атрибут preset записывается карта, из рандомного массива randomnoeChislo
-        // из randomCard берется ранд карта и записывается в массив randomnoeChislo
+        `
+        window.globalState.randomCard.splice(randomnoeChislo, 1)
     }
 
-    return array.join('') // возвращаем строку кнопок
+    return array.join('')
 }
 renderLevelDiff()
