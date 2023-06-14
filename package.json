@@ -6,7 +6,7 @@
     "scripts": {
         "build": "NODE_ENV=development webpack",
         "start": "webpack-dev-server --open",
-        "lint:scss": "stylelint './**.scss'",
+        "lint:scss": "stylelint ./**.scss",
         "lint:forTs": "eslint ./**.ts",
         "lint": "npm run lint:forTs && npm run lint:scss && npm run test",
         "dev": "echo \"Error: no test specified\" && exit 1",

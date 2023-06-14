@@ -29,7 +29,20 @@ function renderOver() {
     </section>
     `
     }
-    checkButtonNewGame()
+    checkButtonOverGame()
+}
+
+function checkButtonOverGame() {
+    const reloadPage = document.querySelector('.over__button')
+    if (reloadPage instanceof HTMLElement) {
+        reloadPage.addEventListener('click', () => {
+            window.globalState.timer = '0'
+            window.globalState.selectUserCard = ''
+            window.globalState.keyForSwitch = '1 Card'
+            window.globalState.timerCheck = 'off'
+            renderLevelDiff()
+        })
+    }
 }
 
 function checkButtonNewGame() {

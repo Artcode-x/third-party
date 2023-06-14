@@ -1,3 +1,4 @@
+import { renderLevelDiff } from './someRender'
 import { randomTakeCard, randomButtonElements } from '../general'
 import { renderWin, renderOver } from './winAndGameOver'
 import { startTimer } from './timer'
@@ -13,6 +14,19 @@ const timerElement = `
 <button class="header__again-button">Начать заново</button>
 </div>
 `
+
+function headerAgainButton() {
+    const letsStartNewGame = document.querySelector('.header__again-button')
+    if (letsStartNewGame instanceof HTMLElement) {
+        letsStartNewGame.addEventListener('click', () => {
+            window.globalState.timer = '0'
+            window.globalState.selectUserCard = ''
+            window.globalState.keyForSwitch = '1 Card'
+            window.globalState.timerCheck = 'off'
+            renderLevelDiff()
+        })
+    }
+}
 
 function renderPresetCards() {
     if (window.globalState.renderElement instanceof HTMLElement) {
@@ -56,6 +70,7 @@ function renderPresetCards() {
             default:
                 break
         }
+        headerAgainButton()
     }
     setTimeout(() => {
         const cardsButtonElements = Array.from(
