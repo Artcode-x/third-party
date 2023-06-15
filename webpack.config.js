@@ -6,9 +6,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
 module.exports = {
-    entry: './general.ts',
+    entry: './src/general.ts',
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'docs'), //docs - name for git pages
         filename: 'bundle.js',
         clean: true,
     },

@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const { it, expect, describe } = require('@jest/globals')
 
-import { randomButtonElements } from './general'
+import { randomButtonElements } from '../src/general'
 
 // блок с тестами, объединяет разные тесты(it) в одном блоке
 describe('Проверяет ф-ии внутри general.ts', () => {

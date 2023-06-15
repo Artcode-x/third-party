@@ -182,7 +182,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("../stratosskyengweb-regular.woff2") format("woff2");
+  src: url("../fonts/stratosskyengweb-regular.woff2") format("woff2");
 }
 .cards-button {
   width: 95px;

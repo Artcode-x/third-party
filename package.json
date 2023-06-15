@@ -4,11 +4,11 @@
     "description": "",
     "main": "general.ts",
     "scripts": {
-        "build": "NODE_ENV=development webpack",
+        "build": "NODE_ENV=production webpack",
         "start": "webpack-dev-server --open",
         "lint:scss": "stylelint ./**.scss",
         "lint:forTs": "eslint ./**.ts",
-        "lint": "npm run lint:forTs && npm run lint:scss && npm run test",
+        "lint": "npm run lint:forTs && npm run lint:scss",
         "dev": "echo \"Error: no test specified\" && exit 1",
         "format": "prettier -write .",
         "lint:ts": "tsc --noEmit",
